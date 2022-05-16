@@ -6,36 +6,36 @@ import {
 } from "react-icons/ai";
 const Footer = () => {
   return (
-    <footer class="footer flex-vt-center">
+    <footer className="footer flex-vt-center">
       <p className="typo-subtext"> Made with ❤️ by Nikhil Jugale</p>
-      <div class="flex-hz-center">
+      <div className="flex-hz-center">
         <a
           href="https://github.com/nikhiljugale007"
           target="_blank"
-          class="link-no-style"
+          className="link-no-style"
           rel="noreferrer"
         >
-          <button class="btn btn-primary btn-icon">
+          <button className="btn btn-primary btn-icon">
             <AiOutlineGithub size={40} />
           </button>
         </a>
         <a
           href="https://twitter.com/"
           target="_blank"
-          class="link-no-style"
+          className="link-no-style"
           rel="noreferrer"
         >
-          <button class="btn btn-primary btn-icon">
+          <button className="btn btn-primary btn-icon">
             <AiFillTwitterCircle size={40} />
           </button>
         </a>
         <a
           href="https://www.linkedin.com/in/nikhiljugale007/"
           target="_blank"
-          class="link-no-style"
+          className="link-no-style"
           rel="noreferrer"
         >
-          <button class="btn btn-primary btn-icon">
+          <button className="btn btn-primary btn-icon">
             <AiFillLinkedin size={40} />
           </button>
         </a>

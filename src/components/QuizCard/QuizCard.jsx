@@ -1,15 +1,15 @@
 import "./QuizCard.css";
 const QuizCard = () => {
   return (
-    <div class="category-card">
+    <div className="category-card">
       <img
-        class="img-responsive"
+        className="img-responsive"
         src="https://wallpaperaccess.com/full/53000.jpg"
         alt="cat"
       />
-      <div class="category-card-text">
-        <h2 class="card-heading txt-white">Thriller</h2>
-        <h3 class="card-subheading txt-white">2 Quizes</h3>
+      <div className="category-card-text">
+        <h2 className="card-heading txt-white">Thriller</h2>
+        <h3 className="card-subheading txt-white">2 Quizes</h3>
       </div>
     </div>
   );
