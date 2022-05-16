@@ -1,3 +1,3 @@
 import { Home } from "./home-page/Home";
-
-export { Home };
+import { Category } from "./category-page/Category";
+export { Home, Category };

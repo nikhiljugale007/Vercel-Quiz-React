@@ -1,6 +1,5 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
-import { AiOutlineCodepenCircle, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineCodepenCircle } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 const Header = () => {
   return (

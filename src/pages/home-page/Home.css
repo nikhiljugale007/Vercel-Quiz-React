@@ -1,0 +1,80 @@
+.hero-section {
+	background-image: url("https://raw.githubusercontent.com/nikhiljugale007/vercel-quiz/dev-branch/resources/hero-bg.jpg");
+	border-radius: 10px;
+	padding: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+      margin: 1.5rem;
+}
+.hero-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	font-size: 3rem;
+	padding: 2rem;
+}
+.hero-card-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.hero-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #6077ef;
+	color: #fff;
+	padding: 2rem;
+	gap: 1rem;
+	border-radius: 8px;
+	width: 25rem;
+}
+.hero-card .btn-primary {
+	color: #fff;
+	background-color: #7589f0;
+}
+.hero-card-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+p{
+      margin:0;
+}
+.top-category {
+	width: 95%;
+	padding: 2rem;
+}
+
+.category-heading {
+	padding: 2rem;
+}
+.grid-4-responsive{
+      grid-auto-flow: row;
+      justify-items: center;
+      justify-content: space-between;
+}
+@media screen and (max-width: 850px) {
+	main {
+		margin: 0;
+		padding: 0;
+	}
+	.hero-text {
+		padding: 0rem;
+	}
+	.hero-card-container {
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.hero-section {
+		height: 50rem;
+	}
+	.btn-menu {
+		display: block;
+	}
+	.btn-hide {
+		display: none;
+	}
+}
