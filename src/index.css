@@ -27,6 +27,14 @@
 	--highlight-color: #ccff00;
 	--card-bg-color: white;
 }
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 100%;
+}
+html {
+	font-size: 62.5%;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -39,4 +47,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media screen and (min-width: 1030px) {
+	.category-heading{
+		margin-left: 2rem;
+	}
 }

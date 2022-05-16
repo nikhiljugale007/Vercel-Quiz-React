@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category" element={<Category />} />
+        <Route path="/category/:category_id" element={<Category />} />
       </Routes>
       <Footer />
     </div>

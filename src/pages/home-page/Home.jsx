@@ -46,13 +46,16 @@ const Home = () => {
         </div>
       </div>
       <div className="top-category flex-vt-center">
-        <div className="flex-vt category-heading typo-label">
+        <div className="flex-vt-center category-heading typo-label">
           <p className="h1">Quiz Categories</p>
           <p>
             Select your favourite category from different categories available.
           </p>
         </div>
         <div className="grid grid-4-responsive">
+          <QuizCard />
+          <QuizCard />
+          <QuizCard />
           <QuizCard />
           <QuizCard />
           <QuizCard />
