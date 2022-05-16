@@ -2,7 +2,7 @@ import { QuizCard } from "../../components";
 import "./Home.css";
 const Home = () => {
   return (
-    <div>
+    <div className="home-page">
       <div class="hero-section">
         <div class="hero-text">
           <p class="btn-hide">Love binge watching?</p>
@@ -46,8 +46,8 @@ const Home = () => {
         </div>
       </div>
       <div class="top-category flex-vt-center">
-        <div class="flex-vt-center category-heading typo-label">
-          <p class="h1">Quiz Category</p>
+        <div class="flex-vt category-heading typo-label">
+          <p class="h1">Quiz Categories</p>
           <p>
             Select your favourite category from different categories available.
           </p>

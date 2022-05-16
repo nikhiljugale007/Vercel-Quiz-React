@@ -44,12 +44,11 @@ p{
       margin:0;
 }
 .top-category {
-	width: 95%;
 	padding: 2rem;
 }
 
 .category-heading {
-	padding: 2rem;
+	padding:2rem 0;
 }
 .grid-4-responsive{
       grid-auto-flow: row;
