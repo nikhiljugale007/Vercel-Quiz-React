@@ -39,7 +39,7 @@ const Home = () => {
                 <button className="btn btn-primary">100+</button>
               </div>
               <div className="hero-card-item">
-                <p className="typo-subtext">Compete with 100+ User</p>
+                <p className="typo-subtext">Compete with 200+ User</p>
               </div>
             </div>
           </div>

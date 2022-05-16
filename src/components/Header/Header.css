@@ -11,8 +11,3 @@
 	gap: 0 2rem;
 	color: var(--primary-color);
 }
-
-.login-button{
-	display: flex;
-	background-color: rebeccapurple;
-}

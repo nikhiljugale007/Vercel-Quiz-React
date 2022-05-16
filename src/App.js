@@ -5,7 +5,7 @@ import { Category, Home } from "./pages";
 
 function App() {
   return (
-    <div className="flex-vt">
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
