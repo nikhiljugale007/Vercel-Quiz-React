@@ -24,7 +24,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #6077ef;
+	background-color: var(--purple-color);
 	color: #fff;
 	padding: 2rem;
 	gap: 1rem;
@@ -32,8 +32,8 @@
 	width: 25rem;
 }
 .hero-card .btn-primary {
-	color: #fff;
-	background-color: #7589f0;
+	color: white;
+	background-color: var(--purple-color-dark);
 }
 .hero-card-item {
 	display: flex;

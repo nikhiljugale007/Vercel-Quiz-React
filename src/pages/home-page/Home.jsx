@@ -19,7 +19,7 @@ const Home = () => {
                 <button className="btn btn-primary">10+</button>
               </div>
               <div className="hero-card-item">
-                <p className="typo-subtext">More than 10 category</p>
+                <p className="typo-subtext p-1">More than 10 category</p>
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@ const Home = () => {
                 <button className="btn btn-primary">100+</button>
               </div>
               <div className="hero-card-item">
-                <p className="typo-subtext">Questions to practise</p>
+                <p className="typo-subtext p-1">Questions to practise</p>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ const Home = () => {
                 <button className="btn btn-primary">100+</button>
               </div>
               <div className="hero-card-item">
-                <p className="typo-subtext">Compete with 200+ User</p>
+                <p className="typo-subtext p-1">Compete with 200+ User</p>
               </div>
             </div>
           </div>
