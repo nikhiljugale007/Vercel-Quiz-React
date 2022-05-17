@@ -18,6 +18,9 @@ const Category = () => {
           <QuizCard />
           <QuizCard />
           <QuizCard />
+          <QuizCard />
+          <QuizCard />
+          <QuizCard />
         </div>
       </div>
     </div>

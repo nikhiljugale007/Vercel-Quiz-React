@@ -13,9 +13,14 @@ const Header = () => {
       </div>
 
       <div className="header-sub-container">
-        <button className="btn btn-primary btn-icon">
-          <BiUserCircle size={40} />
-        </button>
+        <Link to="/profile">
+          <button className="btn btn-primary btn-icon">
+            <BiUserCircle size={40} />
+          </button>
+        </Link>
+        <Link to="/login" className="link-no-style">
+          <button className="btn btn-primary">Login</button>
+        </Link>
       </div>
     </header>
   );
