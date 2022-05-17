@@ -1,0 +1,14 @@
+.headerr {
+	display: flex;
+	align-items: center;
+	height: 7rem;
+	justify-content: space-between;
+	box-shadow: 0 5px 3px -3px var(--box-shadow);
+	padding: 0 2rem;
+}
+.header-sub-container {
+	display: flex;
+	align-items: center;
+	gap: 0 2rem;
+	color: var(--primary-color);
+}
