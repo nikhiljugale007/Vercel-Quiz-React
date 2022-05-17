@@ -23,12 +23,8 @@ const QuizQuestions = () => {
         </div>
 
         <div class="flex-hz-space-bw full-width">
-          <a href="#" class="link-no-style">
-            <button class="btn btn-text">PREV</button>
-          </a>
-          <a href="#" class="link-no-style">
-            <button class="btn btn-text">NEXT</button>
-          </a>
+          <button class="btn btn-text">PREV</button>
+          <button class="btn btn-text">NEXT</button>
         </div>
       </div>
     </div>
