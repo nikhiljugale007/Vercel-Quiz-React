@@ -1,4 +1,4 @@
-import { QuizCard } from "../../components";
+import { CategoryCard } from "../../components";
 import "./Home.css";
 const Home = () => {
   return (
@@ -53,13 +53,13 @@ const Home = () => {
           </p>
         </div>
         <div className="grid grid-4-responsive">
-          <QuizCard />
-          <QuizCard />
-          <QuizCard />
-          <QuizCard />
-          <QuizCard />
-          <QuizCard />
-          <QuizCard />
+          <CategoryCard />
+          <CategoryCard />
+          <CategoryCard />
+          <CategoryCard />
+          <CategoryCard />
+          <CategoryCard />
+          <CategoryCard />
         </div>
       </div>
     </div>
