@@ -26,9 +26,9 @@ function App() {
             </RequireAuth>
           }
         />
-        {/* <Route path="/quiz/questions" element={<QuizQuestions />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+
         <Route
           path="/profile"
           element={

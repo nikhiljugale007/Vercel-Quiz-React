@@ -1,38 +1,12 @@
 import { Server, Model, RestSerializer } from "miragejs";
-import { posts } from "./backend/db/posts";
+// import { posts } from "./backend/db/posts";
 import { users } from "./backend/db/users";
 import {
   loginHandler,
   signupHandler,
 } from "./backend/controllers/AuthController";
-import {
-  createPostHandler,
-  getAllpostsHandler,
-  getPostHandler,
-  deletePostHandler,
-  editPostHandler,
-  likePostHandler,
-  dislikePostHandler,
-  getAllUserPostsHandler,
-} from "./backend/controllers/PostController";
-import {
-  getPostCommentsHandler,
-  addPostCommentHandler,
-  editPostCommentHandler,
-  deletePostCommentHandler,
-  upvotePostCommentHandler,
-  downvotePostCommentHandler,
-} from "./backend/controllers/CommentsController";
-import {
-  followUserHandler,
-  getAllUsersHandler,
-  getUserHandler,
-  getBookmarkPostsHandler,
-  bookmarkPostHandler,
-  removePostFromBookmarkHandler,
-  unfollowUserHandler,
-  editUserHandler,
-} from "./backend/controllers/UserController";
+import { getQuizById } from "./backend/controllers/QuizController";
+import { quizzes } from "./backend/db/quizzes";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -42,8 +16,8 @@ export function makeServer({ environment = "development" } = {}) {
     environment,
     // TODO: Use Relationships to have named relational Data
     models: {
-      post: Model,
       user: Model,
+      quizzes: Model,
     },
 
     // Runs on the start of the server
@@ -57,7 +31,8 @@ export function makeServer({ environment = "development" } = {}) {
           bookmarks: [],
         })
       );
-      posts.forEach((item) => server.create("post", { ...item }));
+      // posts.forEach((item) => server.create("post", { ...item }));
+      quizzes.forEach((item) => server.create("quiz", { ...item }));
     },
 
     routes() {
@@ -66,56 +41,7 @@ export function makeServer({ environment = "development" } = {}) {
       this.post("/auth/signup", signupHandler.bind(this));
       this.post("/auth/login", loginHandler.bind(this));
 
-      // post routes (public)
-      this.get("/posts", getAllpostsHandler.bind(this));
-      this.get("/posts/:postId", getPostHandler.bind(this));
-      this.get("/posts/user/:username", getAllUserPostsHandler.bind(this));
-
-      // post routes (private)
-      this.post("/posts", createPostHandler.bind(this));
-      this.delete("/posts/:postId", deletePostHandler.bind(this));
-      this.post("/posts/edit/:postId", editPostHandler.bind(this));
-      this.post("/posts/like/:postId", likePostHandler.bind(this));
-      this.post("/posts/dislike/:postId", dislikePostHandler.bind(this));
-
-      //post comments routes (public)
-      this.get("/comments/:postId", getPostCommentsHandler.bind(this));
-
-      //post comments routes (private)
-      this.post("/comments/add/:postId", addPostCommentHandler.bind(this));
-      this.post(
-        "/comments/edit/:postId/:commentId",
-        editPostCommentHandler.bind(this)
-      );
-      this.post(
-        "/comments/delete/:postId/:commentId",
-        deletePostCommentHandler.bind(this)
-      );
-      this.post(
-        "/comments/upvote/:postId/:commentId",
-        upvotePostCommentHandler.bind(this)
-      );
-      this.post(
-        "/comments/downvote/:postId/:commentId",
-        downvotePostCommentHandler.bind(this)
-      );
-      // user routes (public)
-      this.get("/users", getAllUsersHandler.bind(this));
-      this.get("/users/:userId", getUserHandler.bind(this));
-
-      // user routes (private)
-      this.post("users/edit", editUserHandler.bind(this));
-      this.get("/users/bookmark", getBookmarkPostsHandler.bind(this));
-      this.post("/users/bookmark/:postId/", bookmarkPostHandler.bind(this));
-      this.post(
-        "/users/remove-bookmark/:postId/",
-        removePostFromBookmarkHandler.bind(this)
-      );
-      this.post("/users/follow/:followUserId/", followUserHandler.bind(this));
-      this.post(
-        "/users/unfollow/:followUserId/",
-        unfollowUserHandler.bind(this)
-      );
+      this.get("/quiz/:quizId", getQuizById.bind(this));
     },
   });
 }
