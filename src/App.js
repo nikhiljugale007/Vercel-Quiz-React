@@ -18,7 +18,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/category/:category_id" element={<Category />} />
         <Route path="/quiz/:quizId" element={<Quiz />} />
-        <Route path="/quiz/questions" element={<QuizQuestions />} />
+        <Route
+          path="/quiz/questions"
+          element={
+            <RequireAuth from="/quiz/questions">
+              <QuizQuestions />
+            </RequireAuth>
+          }
+        />
+        {/* <Route path="/quiz/questions" element={<QuizQuestions />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route

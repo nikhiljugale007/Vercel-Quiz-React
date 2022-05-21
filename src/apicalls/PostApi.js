@@ -9,7 +9,7 @@ const PostApi = async (url, body, isAuthRequired) => {
       },
     });
     return {
-      data: response.data.data,
+      data: response.data,
       success: true,
     };
   } catch (err) {

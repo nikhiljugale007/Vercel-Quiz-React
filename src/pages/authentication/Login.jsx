@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { PostApi } from "../../apicalls/PostApi";
 import { useNavigate, useLocation } from "react-router";
+import { useDispatch } from "react-redux";
+import { setLoggedUser } from "../../redux/authSlice";
 const inititalLoginState = { email: "", password: "" };
 
 const validateForm = (formState) => {
@@ -28,6 +30,7 @@ const Login = () => {
   const [formError, setFormError] = useState(inititalLoginState);
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const loginUserFun = async () => {
     const { data, success } = await PostApi(
@@ -36,9 +39,10 @@ const Login = () => {
       false
     );
     if (success) {
-      console.log(data);
+      dispatch(setLoggedUser({ ...data }));
+      location.state === null ? navigate("/") : navigate(location?.state?.from);
     } else {
-      console.log("failed");
+      alert("Something went wrong.");
     }
   };
   const loginUser = (e) => {
