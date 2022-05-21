@@ -2,7 +2,8 @@ import "./Authentication.css";
 import { CheckboxInput, FormInput } from "../../components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import { useNavigate, useLocation } from "react-router";
+import { PostApi } from "../../apicalls/PostApi";
+import { useNavigate, useLocation } from "react-router";
 const inititalLoginState = { email: "", password: "" };
 
 const validateForm = (formState) => {
@@ -25,19 +26,20 @@ const validateForm = (formState) => {
 const Login = () => {
   const [loginFormState, setLoginFormState] = useState(inititalLoginState);
   const [formError, setFormError] = useState(inititalLoginState);
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const loginUserFun = async () => {
-    console.log(loginFormState);
-    //     const response = await loginuser(loginFormState);
-    //     if (response.success) {
-    //       localStorage.setItem("token", response.token);
-    //       authDispatch({ type: "SET_LOGGED_USER" });
-    //       location.state === null ? navigate("/") : navigate(location?.state?.from);
-    //     } else {
-    //       console.log("SOME ERROR1");
-    //     }
+    const { data, success } = await PostApi(
+      "/api/auth/login",
+      { username: loginFormState.email, password: loginFormState.password },
+      false
+    );
+    if (success) {
+      console.log(data);
+    } else {
+      console.log("failed");
+    }
   };
   const loginUser = (e) => {
     e.preventDefault();
