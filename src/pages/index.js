@@ -5,4 +5,14 @@ import { QuizQuestions } from "./quiz-questions-page/QuizQuestions";
 import { Login } from "./authentication/Login";
 import { Signup } from "./authentication/Signup";
 import { Profile } from "./authentication/Profile";
-export { Home, Category, Quiz, QuizQuestions, Login, Signup, Profile };
+import { QuizSolution } from "./quiz-solution-page/QuizSolution";
+export {
+  Home,
+  Category,
+  Quiz,
+  QuizQuestions,
+  Login,
+  Signup,
+  Profile,
+  QuizSolution,
+};

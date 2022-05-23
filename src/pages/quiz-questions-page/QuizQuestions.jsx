@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Question } from "../../components";
 import "./QuizQuestions.css";
 const QuizQuestions = () => {
@@ -28,7 +29,9 @@ const QuizQuestions = () => {
             PREV
           </button>
           {currentQuestionIndex === quiz.questions.length - 1 ? (
-            <button className="btn btn-text">FINISH</button>
+            <Link to="/quiz/answers">
+              <button className="btn btn-text">FINISH</button>
+            </Link>
           ) : (
             <button
               className="btn btn-text"
