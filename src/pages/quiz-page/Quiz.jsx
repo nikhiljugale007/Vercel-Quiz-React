@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { GetApi } from "../../apicalls/GetApi";
 import { setQuiz } from "../../redux/quizSlice";
 import "./Quiz.css";
 const Quiz = () => {
   const dispatch = useDispatch();
+  const { quiz } = useSelector((state) => state.quizSlice);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getQuizData = async () => {
@@ -14,6 +15,7 @@ const Quiz = () => {
       if (success) {
         dispatch(setQuiz({ quiz: data.quiz }));
         setLoading(false);
+        // console.log(temp);
       } else {
         alert("Something went wrong,check console");
       }
@@ -27,7 +29,7 @@ const Quiz = () => {
       ) : (
         <div class="quiz-container flex-vt-center">
           <div class="category-heading typo-label">
-            <p class="h1">Harry Potter</p>
+            <p class="h1">{quiz.name}</p>
             <p>
               "We are only as strong as we are united, as weak as we are
               divided"- Albus Dumbledore
