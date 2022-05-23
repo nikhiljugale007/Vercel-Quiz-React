@@ -3,15 +3,15 @@ import "./Category.css";
 const Category = () => {
   return (
     <div className="category-page">
-      <div class="top-category flex-vt">
-        <div class="category-heading typo-label">
-          <p class="h1">Fiction Category</p>
+      <div className="top-category flex-vt">
+        <div className="category-heading typo-label">
+          <p className="h1">Fiction Category</p>
           <p>
             Love fiction movies & series. Here are some quizes based on famous
             fiction movies and series. Test your knowledge.
           </p>
         </div>
-        <div class="grid grid-4-responsive">
+        <div className="grid grid-4-responsive">
           <QuizCard />
           <QuizCard />
           <QuizCard />

@@ -5,6 +5,6 @@ import quizSlice from "./quizSlice";
 export const store = configureStore({
   reducer: {
     authSlice: authSlice,
-    quizSlie: quizSlice,
+    quizSlice: quizSlice,
   },
 });
