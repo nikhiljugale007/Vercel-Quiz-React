@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  quiz: [],
-  answers: [],
+  quiz: {},
 };
 
 const quizSlice = createSlice({
