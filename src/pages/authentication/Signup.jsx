@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { CheckboxInput, FormInput } from "../../components";
 import { useState } from "react";
 import { validateForm } from "./FormValidator";
-// import { useNavigate } from "react-router";
+import { PostApi } from "../../apicalls/PostApi";
+import { useNavigate } from "react-router";
 
 const initialSignUpFormState = {
   name: "",
@@ -16,7 +17,7 @@ const Signup = () => {
     initialSignUpFormState
   );
   const [formError, setFormError] = useState(initialSignUpFormState);
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const inputChangeHandler = (e) => {
     const new_val = { [e.target.name]: e.target.value };
@@ -36,12 +37,16 @@ const Signup = () => {
       name: signUpFormState.name,
     };
     console.log(post_obj);
-    //     const response = await signupuser(post_obj);
-    //     if (response.success) {
-    //       navigate("/login");
-    //     } else {
-    //       console.log("SOME ERROR");
-    //     }
+    const { success } = await PostApi(
+      "/api/auth/signup",
+      { ...signUpFormState },
+      false
+    );
+    if (success) {
+      navigate("/login");
+    } else {
+      alert("Some error occurred, check console");
+    }
   };
 
   const signupUser = (e) => {
