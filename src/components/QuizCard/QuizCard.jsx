@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
 import "./QuizCard.css";
-const QuizCard = () => {
+const QuizCard = ({ quiz }) => {
+  const { _id, quizName, quizImage, quizQuestions } = quiz;
   return (
-    <Link to="/quiz/123" className="quiz-card">
-      <img
-        className="img-responsive"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREbojc56EugBN42yFy7MNEILo4bwnEjmqUBnrFz7QOooffyI_EtkhOmB7laY7cX8jp6UA&usqp=CAU"
-        alt="the-100-movie"
-      />
+    <Link to={`/quiz/${_id}`} className="quiz-card">
+      <img className="img-responsive" src={quizImage} alt="the-100-movie" />
       <div className="quiz-card-text">
-        <h2 className="card-heading txt-white">The 100</h2>
-        <h3 className="card-subheading txt-white">10 Questions</h3>
+        <h2 className="card-heading txt-white">{quizName}</h2>
+        <h3 className="card-subheading txt-white">
+          {quizQuestions + " Questions"}{" "}
+        </h3>
       </div>
       <div className="typo-title show-on-hover">
         <span>Take Quiz</span>

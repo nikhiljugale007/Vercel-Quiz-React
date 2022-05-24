@@ -29,16 +29,13 @@ const Quiz = () => {
         <div className="quiz-container flex-vt-center">
           <div className="category-heading typo-label">
             <p className="h1">{quiz.quizName}</p>
-            <p>
-              "We are only as strong as we are united, as weak as we are
-              divided"- Albus Dumbledore
-            </p>
+            <p>{quiz.quizDescription}</p>
           </div>
           <div className="quiz-intro">
             <div className="quiz-img">
               <img
                 className="img-responsive"
-                src="https://vistapointe.net/images/harry-potter-and-the-halfblood-prince-1.jpg"
+                src={quiz.quizImage}
                 alt="harry-potter-movie"
               />
             </div>
@@ -57,11 +54,11 @@ const Quiz = () => {
               </div>
               <div className="flex-hz-space-bw">
                 <p>No of Questions :</p>
-                <p>10</p>
+                <p>{quiz.questions.length}</p>
               </div>
               <div className="flex-hz-space-bw">
                 <p>Points :</p>
-                <p>100 Points</p>
+                <p>{quiz.questions.length * 10} Points</p>
               </div>
             </div>
           </div>

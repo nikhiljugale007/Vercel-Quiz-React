@@ -2,8 +2,8 @@ export const quizzes = [
   {
     _id: "1",
     quizName: "Suits",
-    quizImage: "...",
-
+    quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
+    quizDescription: "Check you knowledge of suits series",
     questions: [
       {
         questionNumber: 1,
@@ -37,7 +37,8 @@ export const quizzes = [
   {
     _id: "2",
     quizName: "Suits2",
-    quizImage: "...",
+    quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
+    quizDescription: "Check you knowledge of suits series",
 
     questions: [
       {
@@ -72,7 +73,8 @@ export const quizzes = [
   {
     _id: "3",
     quizName: "Suits3",
-    quizImage: "...",
+    quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
+    quizDescription: "Check you knowledge of suits series",
 
     questions: [
       {
