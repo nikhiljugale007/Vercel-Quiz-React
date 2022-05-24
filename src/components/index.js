@@ -6,6 +6,7 @@ import { RequireAuth } from "./AuthWrapper/RequireAuth";
 import { FormInput } from "./FormInput/FormInput";
 import { CheckboxInput } from "./FormInput/CheckboxInput";
 import { Question } from "./Question/Question";
+import { QuestionWithSolution } from "./Question/QuestionWithSolution";
 export {
   Header,
   Footer,
@@ -15,4 +16,5 @@ export {
   FormInput,
   CheckboxInput,
   Question,
+  QuestionWithSolution,
 };

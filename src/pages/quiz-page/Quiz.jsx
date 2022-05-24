@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { GetApi } from "../../apicalls/GetApi";
-import { setQuiz } from "../../redux/quizSlice";
+import { resetAnswer, setQuiz } from "../../redux/quizSlice";
 import "./Quiz.css";
 const Quiz = () => {
   const dispatch = useDispatch();
@@ -11,11 +11,10 @@ const Quiz = () => {
   useEffect(() => {
     const getQuizData = async () => {
       const { data, success } = await GetApi("/api/quiz/1");
-
       if (success) {
         dispatch(setQuiz({ quiz: data.quiz }));
         setLoading(false);
-        // console.log(temp);
+        dispatch(resetAnswer());
       } else {
         alert("Something went wrong,check console");
       }
@@ -29,7 +28,7 @@ const Quiz = () => {
       ) : (
         <div className="quiz-container flex-vt-center">
           <div className="category-heading typo-label">
-            <p className="h1">{quiz.name}</p>
+            <p className="h1">{quiz.quizName}</p>
             <p>
               "We are only as strong as we are united, as weak as we are
               divided"- Albus Dumbledore

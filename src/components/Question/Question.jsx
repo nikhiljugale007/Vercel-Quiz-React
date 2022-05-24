@@ -4,8 +4,8 @@ import "./Question.css";
 const Question = ({ question }) => {
   const dispatch = useDispatch();
   const { questionNumber, options } = question;
-  // const { quiz, answers } = useSelector((store) => store.quizSlice);
   const { answers } = useSelector((store) => store.quizSlice);
+
   const setAnswerOption = (index) => {
     dispatch(setAnswer({ questionNo: questionNumber, option: index + 1 }));
   };

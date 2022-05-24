@@ -32,7 +32,7 @@ export const quizzes = [
         options: ["Yale", "Columbia", "Harvard", "Stanford"],
       },
     ],
-    answers: ["a", "c", "c", "b", "d"],
+    answers: [1, 3, 3, 2, 4],
   },
   {
     _id: "2",
@@ -67,7 +67,7 @@ export const quizzes = [
         options: ["Yale", "Columbia", "Harvard", "Stanford"],
       },
     ],
-    answers: ["a", "c", "c", "b", "d"],
+    answers: [1, 3, 3, 2, 4],
   },
   {
     _id: "3",
@@ -102,6 +102,6 @@ export const quizzes = [
         options: ["Yale", "Columbia", "Harvard", "Stanford"],
       },
     ],
-    answers: ["a", "c", "c", "b", "d"],
+    answers: [1, 3, 3, 2, 4],
   },
 ];
