@@ -1,0 +1,20 @@
+.solution-page{
+	font-size: 1.6rem;
+	padding: 0 1.6rem;
+	display: grid;
+	gap: 1.6rem;
+	grid-template-rows: auto 1fr auto;
+}
+.score-container {
+	width: 35rem;
+	justify-self: center;
+	font-size: 2rem;
+	padding: 2rem;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+.two-column {
+	display: grid;
+	grid-template-columns: 1fr 10px 1fr;
+	gap: 1rem;
+}

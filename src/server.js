@@ -7,6 +7,11 @@ import {
 } from "./backend/controllers/AuthController";
 import { getQuizById } from "./backend/controllers/QuizController";
 import { quizzes } from "./backend/db/quizzes";
+import { categories } from "./backend/db/categories";
+import {
+  getAllCategories,
+  getCategoryById,
+} from "./backend/controllers/CategoryController";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -18,6 +23,7 @@ export function makeServer({ environment = "development" } = {}) {
     models: {
       user: Model,
       quizzes: Model,
+      categories: Model,
     },
 
     // Runs on the start of the server
@@ -32,6 +38,7 @@ export function makeServer({ environment = "development" } = {}) {
         })
       );
       quizzes.forEach((item) => server.create("quiz", { ...item }));
+      categories.forEach((item) => server.create("category", { ...item }));
     },
 
     routes() {
@@ -41,6 +48,9 @@ export function makeServer({ environment = "development" } = {}) {
       this.post("/auth/login", loginHandler.bind(this));
 
       this.get("/quiz/:quizId", getQuizById.bind(this));
+
+      this.get("/categories", getAllCategories.bind(this));
+      this.get("/category/:categoryId", getCategoryById.bind(this));
     },
   });
 }

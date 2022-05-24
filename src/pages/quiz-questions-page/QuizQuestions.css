@@ -12,21 +12,8 @@
 	align-items: flex-start;
 	justify-content: flex-start;
 }
-.option-container {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1rem;
-	padding: 2rem;
-}
-.btn-option {
-	background-color: var(--hover-color);
-	width: 100%;
-	justify-self: center;
-}
-.btn-option:hover {
-	background-color: #1a8aff;
-	color: var(--complimentary-font-color);
-	cursor: pointer;
+.btn-text:disabled{
+	cursor: no-drop;
 }
 
 @media screen and (max-width: 850px) {

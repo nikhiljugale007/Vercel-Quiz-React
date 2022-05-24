@@ -1,89 +1,98 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 import { GetApi } from "../../apicalls/GetApi";
-import { setQuiz } from "../../redux/quizSlice";
+import { resetAnswer, setQuiz } from "../../redux/quizSlice";
 import "./Quiz.css";
 const Quiz = () => {
   const dispatch = useDispatch();
+  const { quiz } = useSelector((state) => state.quizSlice);
+  const { quizId } = useParams();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getQuizData = async () => {
-      const { data, success } = await GetApi("/api/quiz/1");
-
+      const { data, success } = await GetApi(`/api/quiz/${quizId}`);
       if (success) {
         dispatch(setQuiz({ quiz: data.quiz }));
         setLoading(false);
+        dispatch(resetAnswer());
       } else {
         alert("Something went wrong,check console");
       }
     };
     getQuizData();
-  }, [dispatch]);
+  }, [dispatch, quizId]);
   return (
     <div className="quiz-page">
       {loading ? (
-        <h1>loading</h1>
+        <div className="flex-hz-center">
+          <h1>Loading Please wait</h1>
+        </div>
       ) : (
-        <div class="quiz-container flex-vt-center">
-          <div class="category-heading typo-label">
-            <p class="h1">Harry Potter</p>
-            <p>
-              "We are only as strong as we are united, as weak as we are
-              divided"- Albus Dumbledore
-            </p>
+        <div className="quiz-container flex-vt-center">
+          <div className="category-heading typo-label">
+            <p className="h1">{quiz.quizName}</p>
+            <p>{quiz.quizDescription}</p>
           </div>
-          <div class="quiz-intro">
-            <div class="quiz-img">
+          <div className="quiz-intro">
+            <div className="quiz-img">
               <img
-                class="img-responsive"
-                src="https://vistapointe.net/images/harry-potter-and-the-halfblood-prince-1.jpg"
+                className="img-responsive"
+                src={quiz.quizImage}
                 alt="harry-potter-movie"
               />
             </div>
-            <div class="quiz-details typo-label">
-              <div class="flex-hz-space-bw">
+            <div className="quiz-details typo-label">
+              <div className="flex-hz-space-bw">
                 <p>Date :</p>
                 <p>12/02/2022</p>
               </div>
-              <div class="flex-hz-space-bw">
+              <div className="flex-hz-space-bw">
                 <p>Time Limit :</p>
                 <p>30 Minutes</p>
               </div>
-              <div class="flex-hz-space-bw">
+              <div className="flex-hz-space-bw">
                 <p>Attempts:</p>
                 <p>3 allowed</p>
               </div>
-              <div class="flex-hz-space-bw">
+              <div className="flex-hz-space-bw">
                 <p>No of Questions :</p>
-                <p>10</p>
+                <p>{quiz.questions.length}</p>
               </div>
-              <div class="flex-hz-space-bw">
+              <div className="flex-hz-space-bw">
                 <p>Points :</p>
-                <p>100 Points</p>
+                <p>
+                  {quiz.questions.length * quiz.instruction.pointsPerQuestion}{" "}
+                  Points
+                </p>
               </div>
             </div>
           </div>
-          <div class="category-heading typo-label">
-            <p class="h3">Instructions</p>
-            <ul class="list">
-              <li class="list-item typo-subtext">
-                Each right answer score 10 points.
+          <div className="category-heading typo-label">
+            <p className="h3">Instructions</p>
+            <ul className="list">
+              <li className="list-item typo-subtext">
+                Each right answer score{" "}
+                {" " + quiz.instruction.pointsPerQuestion + " "}
+                points.
               </li>
-              <li class="list-item typo-subtext">
+              <li className="list-item typo-subtext">
                 Each multiple choice question has only one correct answer.
               </li>
-              <li class="list-item typo-subtext">
-                To win the quiz you need to score more than 70%.
+              <li className="list-item typo-subtext">
+                To win the quiz you need to score more than
+                {" " + quiz.instruction.passingScore}%.
               </li>
-              <li class="list-item typo-subtext">
-                There is no negative marking
+              <li className="list-item typo-subtext">
+                {quiz.instruction.negativeMarking
+                  ? "There is negative marking"
+                  : "There is no negative marking"}
               </li>
             </ul>
           </div>
-          <div class="flex-hz-center full-width">
-            <Link to="/quiz/questions" class="link-no-style">
-              <button class="btn btn-primary">Start Quiz</button>
+          <div className="flex-hz-center full-width">
+            <Link to="/quiz/questions" className="link-no-style">
+              <button className="btn btn-primary">Start Quiz</button>
             </Link>
           </div>
         </div>

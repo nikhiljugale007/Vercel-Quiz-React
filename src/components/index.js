@@ -5,6 +5,8 @@ import { QuizCard } from "./QuizCard/QuizCard";
 import { RequireAuth } from "./AuthWrapper/RequireAuth";
 import { FormInput } from "./FormInput/FormInput";
 import { CheckboxInput } from "./FormInput/CheckboxInput";
+import { Question } from "./Question/Question";
+import { QuestionWithSolution } from "./Question/QuestionWithSolution";
 export {
   Header,
   Footer,
@@ -13,4 +15,6 @@ export {
   RequireAuth,
   FormInput,
   CheckboxInput,
+  Question,
+  QuestionWithSolution,
 };

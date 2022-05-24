@@ -9,6 +9,7 @@ import {
   Login,
   Signup,
   Profile,
+  QuizSolution,
 } from "./pages";
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/quiz/answers" element={<QuizSolution />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 

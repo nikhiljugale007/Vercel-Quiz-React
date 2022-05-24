@@ -54,6 +54,9 @@
 .full-width {
 	width: 100%;
 }
+.h-screen{
+	min-height: 100vh;
+}
 .active-tag {
 	color: var(--primary-color);
 	background-color: var(--hover-color);
