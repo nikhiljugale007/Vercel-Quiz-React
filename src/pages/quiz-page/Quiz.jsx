@@ -25,7 +25,9 @@ const Quiz = () => {
   return (
     <div className="quiz-page">
       {loading ? (
-        <h1>loading</h1>
+        <div className="flex-hz-center">
+          <h1>Loading Please wait</h1>
+        </div>
       ) : (
         <div className="quiz-container flex-vt-center">
           <div className="category-heading typo-label">

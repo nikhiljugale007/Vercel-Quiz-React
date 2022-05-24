@@ -74,7 +74,9 @@ const Home = () => {
         </div>
         <div className="grid grid-4-responsive">
           {loading ? (
-            <h1>Loading</h1>
+            <div className="flex-hz-center">
+              <h1>Loading Please wait</h1>
+            </div>
           ) : (
             categories.map((category) => {
               return <CategoryCard key={category.id} category={category} />;

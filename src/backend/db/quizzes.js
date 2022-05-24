@@ -319,6 +319,6 @@ export const quizzes = [
         options: ["Bangles", "Keys", "Bell", "Ghunghroo"],
       },
     ],
-    answers: [1, 2, 1, 2, 4],
+    answers: [1, 1, 3, 2, 4],
   },
 ];

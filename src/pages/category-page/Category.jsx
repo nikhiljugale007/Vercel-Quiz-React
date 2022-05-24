@@ -29,7 +29,9 @@ const Category = () => {
   return (
     <div className="category-page">
       {loading ? (
-        <h1>Loading</h1>
+        <div className="flex-hz-center">
+          <h1>Loading Please wait</h1>
+        </div>
       ) : (
         <div className="top-category flex-vt">
           <div className="category-heading typo-label">

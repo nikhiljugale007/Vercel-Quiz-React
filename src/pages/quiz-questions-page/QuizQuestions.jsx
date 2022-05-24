@@ -29,7 +29,7 @@ const QuizQuestions = () => {
             PREV
           </button>
           {currentQuestionIndex === quiz.questions.length - 1 ? (
-            <Link to="/quiz/answers">
+            <Link to="/quiz/answers" className="link-no-style">
               <button className="btn btn-text">FINISH</button>
             </Link>
           ) : (
