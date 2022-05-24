@@ -4,6 +4,16 @@ export const quizzes = [
     quizName: "Suits",
     quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
     quizDescription: "Check you knowledge of suits series",
+    rules: {
+      timeLimit: 30,
+      attempts: 2,
+    },
+    instruction: {
+      pointsPerQuestion: 20,
+      passingScore: 80,
+      negativeMarking: true,
+      negativeMarkPerQuestion: 10,
+    },
     questions: [
       {
         questionNumber: 1,
@@ -32,14 +42,23 @@ export const quizzes = [
         options: ["Yale", "Columbia", "Harvard", "Stanford"],
       },
     ],
-    answers: [1, 3, 3, 2, 4],
+    answers: [2, 1, 3, 1, 3],
   },
   {
     _id: "2",
     quizName: "Suits2",
     quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
     quizDescription: "Check you knowledge of suits series",
-
+    rules: {
+      timeLimit: 30,
+      attempts: 2,
+    },
+    instruction: {
+      pointsPerQuestion: 20,
+      passingScore: 80,
+      negativeMarking: true,
+      negativeMarkPerQuestion: 10,
+    },
     questions: [
       {
         questionNumber: 1,
@@ -68,14 +87,23 @@ export const quizzes = [
         options: ["Yale", "Columbia", "Harvard", "Stanford"],
       },
     ],
-    answers: [1, 3, 3, 2, 4],
+    answers: [2, 1, 3, 1, 3],
   },
   {
     _id: "3",
     quizName: "Suits3",
     quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
     quizDescription: "Check you knowledge of suits series",
-
+    rules: {
+      timeLimit: 30,
+      attempts: 2,
+    },
+    instruction: {
+      pointsPerQuestion: 20,
+      passingScore: 80,
+      negativeMarking: true,
+      negativeMarkPerQuestion: 10,
+    },
     questions: [
       {
         questionNumber: 1,
@@ -104,6 +132,6 @@ export const quizzes = [
         options: ["Yale", "Columbia", "Harvard", "Stanford"],
       },
     ],
-    answers: [1, 3, 3, 2, 4],
+    answers: [2, 1, 3, 1, 3],
   },
 ];

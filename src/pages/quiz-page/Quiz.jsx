@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { GetApi } from "../../apicalls/GetApi";
 import { resetAnswer, setQuiz } from "../../redux/quizSlice";
 import "./Quiz.css";
 const Quiz = () => {
   const dispatch = useDispatch();
   const { quiz } = useSelector((state) => state.quizSlice);
+  const { quizId } = useParams();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getQuizData = async () => {
-      const { data, success } = await GetApi("/api/quiz/1");
+      const { data, success } = await GetApi(`/api/quiz/${quizId}`);
       if (success) {
         dispatch(setQuiz({ quiz: data.quiz }));
         setLoading(false);
@@ -20,7 +21,7 @@ const Quiz = () => {
       }
     };
     getQuizData();
-  }, [dispatch]);
+  }, [dispatch, quizId]);
   return (
     <div className="quiz-page">
       {loading ? (
@@ -58,7 +59,10 @@ const Quiz = () => {
               </div>
               <div className="flex-hz-space-bw">
                 <p>Points :</p>
-                <p>{quiz.questions.length * 10} Points</p>
+                <p>
+                  {quiz.questions.length * quiz.instruction.pointsPerQuestion}{" "}
+                  Points
+                </p>
               </div>
             </div>
           </div>
@@ -66,16 +70,21 @@ const Quiz = () => {
             <p className="h3">Instructions</p>
             <ul className="list">
               <li className="list-item typo-subtext">
-                Each right answer score 10 points.
+                Each right answer score{" "}
+                {" " + quiz.instruction.pointsPerQuestion + " "}
+                points.
               </li>
               <li className="list-item typo-subtext">
                 Each multiple choice question has only one correct answer.
               </li>
               <li className="list-item typo-subtext">
-                To win the quiz you need to score more than 70%.
+                To win the quiz you need to score more than $
+                {quiz.instruction.passingScore}%.
               </li>
               <li className="list-item typo-subtext">
-                There is no negative marking
+                {quiz.instruction.negativeMarking
+                  ? "There is negative marking"
+                  : "There is no negative marking"}
               </li>
             </ul>
           </div>

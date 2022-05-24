@@ -5,7 +5,10 @@ import { QuestionWithSolution } from "../../components";
 import "./QuizSolution.css";
 const QuizSolution = () => {
   const { quiz, answers } = useSelector((store) => store.quizSlice);
+  const { pointsPerQuestion, negativeMarking, negativeMarkPerQuestion } =
+    quiz.instruction;
   const [result, setResult] = useState({
+    totalScore: 0,
     rightAnswer: 0,
     wrongAnswer: 0,
     totalQuestion: 0,
@@ -28,7 +31,20 @@ const QuizSolution = () => {
         setResult((prev) => ({ ...prev, wrongAnswer: prev.wrongAnswer + 1 }));
       }
     }
-  }, [answers, quiz]);
+    setResult((prev) => ({
+      ...prev,
+      totalScore: negativeMarking
+        ? prev.rightAnswer * pointsPerQuestion -
+          prev.wrongAnswer * negativeMarkPerQuestion
+        : prev.rightAnswer * pointsPerQuestion,
+    }));
+  }, [
+    answers,
+    quiz,
+    negativeMarkPerQuestion,
+    negativeMarking,
+    pointsPerQuestion,
+  ]);
 
   return (
     <div className="solution-page">
@@ -40,7 +56,7 @@ const QuizSolution = () => {
           <p>Score</p>
           <p>:</p>
           <p className="temp1">
-            {result.rightAnswer}/{result.totalQuestion}
+            {result.totalScore}/{result.totalQuestion * pointsPerQuestion}
           </p>
         </div>
         <div className="two-column">

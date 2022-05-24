@@ -5,7 +5,6 @@ import { GrFormClose } from "react-icons/gr";
 const QuestionWithSolution = ({ question }) => {
   const { questionNumber, options } = question;
   const { quiz, answers } = useSelector((store) => store.quizSlice);
-
   const markRightOption = ({ index }) => {
     return quiz.answers[questionNumber - 1] === index + 1;
   };

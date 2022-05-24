@@ -73,6 +73,7 @@ export const categories = [
     categoryDescription:
       "Love fiction movies & series. Here are some quizes based on famous fiction movies and series. Test your knowledge.",
     categoryQuizzes: 2,
+
     quizzes: [
       {
         _id: "1",
