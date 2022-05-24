@@ -10,12 +10,11 @@
 	justify-self: center;
 	font-size: 2rem;
 	padding: 2rem;
-	border: 2px solid #000;
+	border: 2px solid black;
 	border-radius: 10px;
 }
 .two-column {
 	display: grid;
 	grid-template-columns: 1fr 10px 1fr;
-	/* background-color: red; */
 	gap: 1rem;
 }
