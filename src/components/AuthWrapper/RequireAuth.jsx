@@ -1,10 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Navigate } from "react-router";
-// import { useAuthContext } from "../../context/AuthContext";
 
 const RequireAuth = ({ children, from }) => {
-  //   const { authState } = useAuthContext();
-  return true ? (
+  const { isLoggedIn } = useSelector((store) => store.authSlice);
+  return isLoggedIn ? (
     children
   ) : (
     <Navigate to="/login" replace state={{ from: from }} />
