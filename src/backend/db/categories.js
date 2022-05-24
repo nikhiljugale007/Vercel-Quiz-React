@@ -8,14 +8,18 @@ export const categories = [
     categoryQuizzes: 2,
     quizzes: [
       {
-        _id: "1",
-        quizName: "Suits",
-        quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
+        _id: "2",
+        quizName: "A fan of The Family Man?",
+        quizImage:
+          "https://images.indianexpress.com/2021/05/The-Family-Man-1200.jpg",
+        quizQuestions: 5,
       },
       {
-        _id: "2",
-        quizName: "Suits2",
-        quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
+        _id: "3",
+        quizName: "Breathe",
+        quizImage:
+          "https://m.media-amazon.com/images/M/MV5BMDI0N2NjNzctY2RkOC00OWNkLTg2MzMtMGU0YTUzNGJkYmNlXkEyXkFqcGdeQXVyNTM1MzM4Nzk@._V1_FMjpg_UX1000_.jpg",
+        quizQuestions: 5,
       },
     ],
   },
@@ -29,14 +33,15 @@ export const categories = [
     ccategoryQuizzes: 2,
     quizzes: [
       {
-        _id: "1",
-        quizName: "Suits",
-        quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
+        _id: "4",
+        quizName: "f.r.i.e.d.s",
+        quizImage:
+          "https://images.indianexpress.com/2021/05/friends-the-reunion-1200-2.jpg",
         quizQuestions: 5,
       },
       {
-        _id: "2",
-        quizName: "Suits2",
+        _id: "1",
+        quizName: "Suits",
         quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
         quizQuestions: 5,
       },
@@ -58,9 +63,10 @@ export const categories = [
         quizQuestions: 5,
       },
       {
-        _id: "2",
-        quizName: "Suits2",
-        quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
+        _id: "5",
+        quizName: "Harry Potter",
+        quizImage:
+          "https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
         quizQuestions: 5,
       },
     ],
@@ -71,20 +77,15 @@ export const categories = [
     categoryImage:
       "https://images.unsplash.com/photo-1505635552518-3448ff116af3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aG9ycm9yfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
     categoryDescription:
-      "Love fiction movies & series. Here are some quizes based on famous fiction movies and series. Test your knowledge.",
-    categoryQuizzes: 2,
+      "Love Horor movies & series. Here are some quizes based on famous fiction movies and series. Test your knowledge.",
+    categoryQuizzes: 1,
 
     quizzes: [
       {
-        _id: "1",
-        quizName: "Suits",
-        quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
-        quizQuestions: 5,
-      },
-      {
-        _id: "2",
-        quizName: "Suits2",
-        quizImage: "https://flxt.tmsimg.com/assets/p8630071_b_h8_bc.jpg",
+        _id: "6",
+        quizName: "Bhool Bhulaiyaa",
+        quizImage:
+          "https://upload.wikimedia.org/wikipedia/en/6/6f/Bhool_bhulaiyaa.jpg",
         quizQuestions: 5,
       },
     ],

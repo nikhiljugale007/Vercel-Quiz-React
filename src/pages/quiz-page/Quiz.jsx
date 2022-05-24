@@ -78,8 +78,8 @@ const Quiz = () => {
                 Each multiple choice question has only one correct answer.
               </li>
               <li className="list-item typo-subtext">
-                To win the quiz you need to score more than $
-                {quiz.instruction.passingScore}%.
+                To win the quiz you need to score more than
+                {" " + quiz.instruction.passingScore}%.
               </li>
               <li className="list-item typo-subtext">
                 {quiz.instruction.negativeMarking
