@@ -6,6 +6,8 @@ import { PostApi } from "../../apicalls/PostApi";
 import { useNavigate, useLocation } from "react-router";
 import { useDispatch } from "react-redux";
 import { setLoggedUser } from "../../redux/authSlice";
+import { Helmet } from "react-helmet";
+
 const inititalLoginState = { email: "", password: "" };
 
 const validateForm = (formState) => {
@@ -72,6 +74,9 @@ const Login = () => {
   return (
     <>
       <div className="form-container authentication-page">
+        <Helmet>
+          <title>Login | VercelQuiz</title>
+        </Helmet>
         <form className="form card" onSubmit={loginUser}>
           <p className="typo-title flex-hz-center">Sign in</p>
           <FormInput

@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { GetApi } from "../../apicalls/GetApi";
 import { resetAnswer, setQuiz } from "../../redux/quizSlice";
 import "./Quiz.css";
+import { Helmet } from "react-helmet";
+
 const Quiz = () => {
   const dispatch = useDispatch();
   const { quiz } = useSelector((state) => state.quizSlice);
@@ -26,10 +28,16 @@ const Quiz = () => {
     <div className="quiz-page">
       {loading ? (
         <div className="flex-hz-center">
+          <Helmet>
+            <title>Quiz | VercelQuiz</title>
+          </Helmet>
           <h1>Loading Please wait</h1>
         </div>
       ) : (
         <div className="quiz-container flex-vt-center">
+          <Helmet>
+            <title>{quiz.quizName + " "} | VercelQuiz</title>
+          </Helmet>
           <div className="category-heading typo-label">
             <p className="h1">{quiz.quizName}</p>
             <p>{quiz.quizDescription}</p>

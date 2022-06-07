@@ -4,6 +4,8 @@ import { GetApi } from "../../apicalls/GetApi";
 import "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategories } from "../../redux/categorySlice";
+import { Helmet } from "react-helmet";
+
 const Home = () => {
   const dispatch = useDispatch();
   const { categories } = useSelector((store) => store.categorySlice);
@@ -23,6 +25,9 @@ const Home = () => {
   }, [dispatch]);
   return (
     <div className="home-page">
+      <Helmet>
+        <title>Home | VercelQuiz</title>
+      </Helmet>
       <div className="hero-section">
         <div className="hero-text">
           <p className="btn-hide">Love binge watching?</p>
