@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GetApi } from "../../apicalls/GetApi";
 import { QuizCard } from "../../components";
+import { Helmet } from "react-helmet";
+
 import "./Category.css";
 const Category = () => {
   const { category_id } = useParams();
@@ -30,10 +32,17 @@ const Category = () => {
     <div className="category-page">
       {loading ? (
         <div className="flex-hz-center">
+          <Helmet>
+            <title>Category | VercelQuiz</title>
+          </Helmet>
+
           <h1>Loading Please wait</h1>
         </div>
       ) : (
         <div className="top-category flex-vt">
+          <Helmet>
+            <title>{categoryName + " "} | VercelQuiz</title>
+          </Helmet>
           <div className="category-heading typo-label">
             <p className="h1">{categoryName}</p>
             <p>{categoryDescription}</p>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { validateForm } from "./FormValidator";
 import { PostApi } from "../../apicalls/PostApi";
 import { useNavigate } from "react-router";
+import { Helmet } from "react-helmet";
 
 const initialSignUpFormState = {
   name: "",
@@ -63,6 +64,9 @@ const Signup = () => {
 
   return (
     <div className="form-container authentication-page">
+      <Helmet>
+        <title>Signup | VercelQuiz</title>
+      </Helmet>
       <form className="form card" onSubmit={signupUser}>
         <p className="typo-title flex-hz-center p-1">Sign Up</p>
         <FormInput

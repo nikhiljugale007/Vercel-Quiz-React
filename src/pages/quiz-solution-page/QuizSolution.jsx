@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { QuestionWithSolution } from "../../components";
 import "./QuizSolution.css";
+import { Helmet } from "react-helmet";
+
+
 const QuizSolution = () => {
   const { quiz, answers } = useSelector((store) => store.quizSlice);
   const { pointsPerQuestion, negativeMarking, negativeMarkPerQuestion } =
@@ -48,6 +51,10 @@ const QuizSolution = () => {
 
   return (
     <div className="solution-page">
+      <Helmet>
+        <title>{quiz.quizName + " solution"} | VercelQuiz</title>
+      </Helmet>
+
       <div className="typo-label">
         <p className="h1 flex-hz-center">{quiz.quizName}</p>
       </div>

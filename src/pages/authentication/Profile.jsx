@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../../redux/authSlice";
+import { Helmet } from "react-helmet";
 import "./Authentication.css";
 const Profile = () => {
   const { user } = useSelector((state) => state.authSlice);
@@ -12,6 +13,9 @@ const Profile = () => {
   };
   return (
     <div className="profile-page">
+      <Helmet>
+        <title>Profile | VercelQuiz</title>
+      </Helmet>
       <p className="typo-title flex-hz-center p-2">My Profile</p>
       <p className="typo-title flex-hz-center p-2">{user.firstName}</p>
       <div className="flex-hz-center">
