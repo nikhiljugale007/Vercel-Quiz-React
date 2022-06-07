@@ -35,6 +35,7 @@ const Category = () => {
           <Helmet>
             <title>Category | VercelQuiz</title>
           </Helmet>
+
           <h1>Loading Please wait</h1>
         </div>
       ) : (

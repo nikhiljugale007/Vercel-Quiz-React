@@ -5,7 +5,6 @@ import "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategories } from "../../redux/categorySlice";
 import { Helmet } from "react-helmet";
-
 const Home = () => {
   const dispatch = useDispatch();
   const { categories } = useSelector((store) => store.categorySlice);

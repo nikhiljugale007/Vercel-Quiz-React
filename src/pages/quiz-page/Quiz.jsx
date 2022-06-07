@@ -38,6 +38,7 @@ const Quiz = () => {
           <Helmet>
             <title>{quiz.quizName + " "} | VercelQuiz</title>
           </Helmet>
+
           <div className="category-heading typo-label">
             <p className="h1">{quiz.quizName}</p>
             <p>{quiz.quizDescription}</p>
