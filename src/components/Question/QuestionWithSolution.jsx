@@ -28,7 +28,7 @@ const QuestionWithSolution = ({ question }) => {
                     {option}
                   </button>
                 ) : checkUserAnswer() ? (
-                  <button className="btn btn-option">{option}</button>
+                  <button className="btn btn-extra-option">{option}</button>
                 ) : answers[questionNumber - 1] === index + 1 ? (
                   <button className="btn btn-danger">
                     <GrFormClose />

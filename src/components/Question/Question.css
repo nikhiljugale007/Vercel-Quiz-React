@@ -9,6 +9,14 @@
 	width: 100%;
 	justify-self: center;
 }
+.btn-extra-option {
+	background-color: var(--hover-color);
+	width: 100%;
+	justify-self: center;
+}
+.btn-extra-option:hover{
+	cursor: pointer;
+}
 .btn-success , .btn-danger, .btn-option{
 	width: 100%;
 }
