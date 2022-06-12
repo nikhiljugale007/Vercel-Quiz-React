@@ -62,3 +62,6 @@
 	background-color: var(--hover-color);
 	transform: scale(1.2);
 }
+.btn-option:hover .btn-no-hover:hover{
+	background-color: aqua;
+}
